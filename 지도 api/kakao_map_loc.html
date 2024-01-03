@@ -1,0 +1,94 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Kakao Map</title>
+</head>
+<body>
+    <div id="map" style="width:100h;height:100vh;"></div>
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=36d98f4865a05552ba2b55d60a0ac306"></script>
+    <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(37.56646, 126.98121), // 초기 중심좌표 설정 (서울)
+                level: 4, // 지도의 확대 레벨
+                mapTypeId: kakao.maps.MapTypeId.ROADMAP, // 지도종류
+            };
+
+        // 지도를 생성 
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+
+        function locationLoadSuccess(pos) {
+            // 현재 위치 받아오기
+            var currentPos = new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+
+            // 지도 이동(기존 위치와 가깝다면 부드럽게 이동)
+            map.panTo(currentPos);
+
+            // 마커 생성
+            var marker = new kakao.maps.Marker({
+                position: currentPos
+            });
+
+            // 기존에 마커가 있다면 제거
+            marker.setMap(null);
+            marker.setMap(map);
+        };
+
+        function locationLoadError(pos) {
+            alert('위치 정보를 가져오는데 실패했습니다.');
+        };
+
+        // 페이지 로드 시 자동으로 현재 위치 가져오기
+        navigator.geolocation.getCurrentPosition(locationLoadSuccess, locationLoadError);
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Kakao Map - Nearby Hospitals</title>
+</head>
+<body>
+    <div id="map" style="width:100%;height:100vh;"></div>
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=36d98f4865a05552ba2b55d60a0ac306&libraries=services"></script>
+    <script>
+        var mapContainer = document.getElementById('map'),
+            mapOption = {
+                center: new kakao.maps.LatLng(37.56646, 126.98121),
+                level: 3
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+
+        // 장소 검색 객체를 생성합니다
+        var ps = new kakao.maps.services.Places();
+
+        // 검색 완료 시 호출되는 콜백함수를 정의합니다
+        var callback = function(result, status) {
+            if (status === kakao.maps.services.Status.OK) {
+                console.log(result);
+
+                for (var i = 0; i < result.length; i++) {
+                    // 마커를 생성하고 지도에 표시합니다
+                    var marker = new kakao.maps.Marker({
+                        map: map,
+                        position: new kakao.maps.LatLng(result[i].y, result[i].x)
+                    });
+
+                    // TODO: 인포윈도우에 표시할 병원 정보 추가
+                }
+            }
+        };
+
+        // 현재 위치를 기반으로 주변 병원을 검색합니다
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var locPosition = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            map.setCenter(locPosition);
+            ps.keywordSearch('병원', callback, {location: locPosition});
+        });
+    </script>
+</body>
+</html>

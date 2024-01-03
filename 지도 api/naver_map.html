@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>간단한 지도 표시하기</title>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=vvh04boh1m"></script>
+</head>
+<body>
+<div id="map" style="width:100%;height:100px;"></div>
+
+<script>
+    w = window.innerWidth;
+    h = window.innerHeight;
+    //    alert(w + " " + h); 
+
+    var mapDiv = document.getElementById('map');
+    var map;
+
+    function displayMap(latitude, longitude) {
+        map = new naver.maps.Map(mapDiv, {
+            center: new naver.maps.LatLng(latitude, longitude),
+            zoom: 15,
+            size : new naver.maps.Size(w,h) 
+        });
+
+        new naver.maps.Marker({
+            position: new naver.maps.LatLng(latitude, longitude),
+            map: map,
+            title: "현재 위치"
+        });
+    }
+
+    function handleLocationError() {
+        console.error("사용자의 위치를 찾을 수 없습니다.");
+        displayMap(37.5666103, 126.9783882); // 기본 위치로 지도 생성 (예: 서울 시청)
+    }
+
+    function getUserLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                displayMap(position.coords.latitude, position.coords.longitude);
+            }, handleLocationError);
+        } else {
+            handleLocationError();
+        }
+    }
+
+    getUserLocation();
+</script>
+</body>
+</html>
