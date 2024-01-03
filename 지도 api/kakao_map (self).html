@@ -10,7 +10,8 @@
     <script>
         var mapContainer = document.getElementById('map'),
             mapOption = {
-                center: new kakao.maps.LatLng(37.56646, 126.98121),
+                // 초기 위치를 지정된 위도와 경도로 설정합니다
+                center: new kakao.maps.LatLng(37.490887585016836, 126.67624158661383),
                 level: 2
             };
 
@@ -24,10 +25,14 @@
 
         var currentLocationMarker = new kakao.maps.Marker({
             map: map,
-            image: markerImage 
+            image: markerImage,
+            // 마커의 위치도 고정된 위치로 설정합니다
+            position: mapOption.center
         });
 
         var ps = new kakao.maps.services.Places();
+
+        var currentInfowindow = null;
 
         var callback = function(result, status) {
             if (status === kakao.maps.services.Status.OK) {
@@ -50,22 +55,18 @@
             });
 
             kakao.maps.event.addListener(marker, 'click', function() {
+                if (currentInfowindow) {
+                    currentInfowindow.close();
+                }
+
                 infowindow.open(map, marker);
+                currentInfowindow = infowindow;
             });
         }
 
-        navigator.geolocation.getCurrentPosition(function(position) {
-            var locPosition = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            currentLocationMarker.setPosition(locPosition);
-            map.setCenter(locPosition);
-            ps.keywordSearch('병원', callback, {location: locPosition});
-        }, function(error) {
-            console.error('Geolocation failed: ' + error.message);
-        }, {
-            enableHighAccuracy: true,
-            timeout: 10000,
-            maximumAge: 0
-        });
+        // 고정된 위치를 중심으로 병원을 검색합니다
+        ps.keywordSearch('병원', callback, {location: mapOption.center});
+
     </script>
 </body>
 </html>

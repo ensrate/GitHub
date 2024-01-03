@@ -29,6 +29,9 @@
 
         var ps = new kakao.maps.services.Places();
 
+        // 현재 열린 인포윈도우를 추적하는 변수
+        var currentInfowindow = null;
+
         var callback = function(result, status) {
             if (status === kakao.maps.services.Status.OK) {
                 for (var i = 0; i < result.length; i++) {
@@ -50,7 +53,16 @@
             });
 
             kakao.maps.event.addListener(marker, 'click', function() {
+                // 이전에 열린 인포윈도우가 있으면 닫습니다
+                if (currentInfowindow) {
+                    currentInfowindow.close();
+                }
+
+                // 새 인포윈도우를 엽니다
                 infowindow.open(map, marker);
+
+                // 현재 열린 인포윈도우를 업데이트합니다
+                currentInfowindow = infowindow;
             });
         }
 
