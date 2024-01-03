@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Kakao Map - Nearby Hospitals</title>
+</head>
+<body>
+    <div id="map" style="width:100%;height:100vh;"></div>
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=36d98f4865a05552ba2b55d60a0ac306&libraries=services"></script>
+    <script>
+        var mapContainer = document.getElementById('map'),
+            mapOption = {
+                center: new kakao.maps.LatLng(37.56646, 126.98121),
+                level: 2
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+
+        // 커스텀 마커 이미지를 생성합니다
+        var imageSrc = 'marker_img.png' // 마커이미지의 주소입니다    
+            imageSize = new kakao.maps.Size(50, 65), // 마커이미지의 크기입니다
+            imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다.
+
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+
+        // 현재 위치의 마커를 생성합니다
+        var currentLocationMarker = new kakao.maps.Marker({
+            map: map,
+            image: markerImage // 마커이미지 설정 
+        });
+
+        // 장소 검색 객체를 생성합니다
+        var ps = new kakao.maps.services.Places();
+
+        var callback = function(result, status) {
+            if (status === kakao.maps.services.Status.OK) {
+                for (var i = 0; i < result.length; i++) {
+                    var marker = new kakao.maps.Marker({
+                        map: map,
+                        position: new kakao.maps.LatLng(result[i].y, result[i].x)
+                    });
+                }
+            }
+        };
+
+        // 현재 위치를 기반으로 주변 병원을 검색하고 현재 위치에 마커를 표시합니다
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var locPosition = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+            // 현재 위치에 마커 위치를 설정합니다
+            currentLocationMarker.setPosition(locPosition);
+
+            // 지도 중심을 현재 위치로 이동합니다
+            map.setCenter(locPosition);
+
+            // 주변 병원을 검색합니다
+            ps.keywordSearch('병원', callback, {location: locPosition});
+        }, function(error) {
+            console.error('Geolocation failed: ' + error.message);
+        }, {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        });
+    </script>
+</body>
+</html>
