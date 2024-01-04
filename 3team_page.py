@@ -42,7 +42,7 @@ if menu == "피부질환 판별":
 
 elif menu == "주변 병원 찾기":
     # 주변 병원 찾기 페이지에 대한 코드를 작성합니다.
-    st.subheader("주변 병원 찾기 페이지")
+    st.subheader("주변 병원 찾기")
     
     # 지도 서비스 이미지를 추가합니다.
     st.image("kakaomap_img.png", caption="KakaoMap", width=550)  # 이미지의 너비를 700px로 조절
