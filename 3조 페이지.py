@@ -1,5 +1,5 @@
-from PIL import Image
 import streamlit as st
+from PIL import Image
 
 # Streamlit 애플리케이션 타이틀 설정
 st.title("피부질환 케어 서비스")
