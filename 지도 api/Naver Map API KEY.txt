@@ -1,9 +1,0 @@
-naver coloud api key
-
-name : navermap
-
-Client  ID : vvh04boh1m
-
-Client Secret (API-KEY) : K2YwsuUp2gN9dtXVGf2izUVO7v5GIclNTNUNOgwH
-
-서비스 URL : https://host240102.dothome.co.kr (내 개인 호스팅 도메인)
