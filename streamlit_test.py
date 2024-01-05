@@ -5,8 +5,7 @@ import numpy as np
 from tensorflow.keras.applications.efficientnet import preprocess_input
 from streamlit_option_menu import option_menu
 
-
-skin_disease_model = tf.keras.models.load_model('/Users/choejong-gyu/Downloads/project/EfficientNetB3-skin disease-83.17.h5')
+skin_disease_model = tf.keras.models.load_model('./EfficientNetB3-skin disease-83.17.h5')
 
 class_labels = {
     1: 'Eczema',
