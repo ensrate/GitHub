@@ -17,7 +17,7 @@ if 'past' not in st.session_state:
 def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
 	return response.json()
- 
+  
  
 with st.form('form', clear_on_submit=True):
     user_input = st.text_input('You: ', '', key='input')
