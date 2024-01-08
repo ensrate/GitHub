@@ -27,7 +27,6 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-
 with st.sidebar:
     choice = option_menu("Menu", ["피부질환 판별", "정보", "서비스 페이지"],
                          icons=['house', 'kanban', 'bi bi-robot'],
@@ -79,8 +78,6 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-
-
 
 # 메뉴에 따른 동작
 if choice == "피부질환 판별":
