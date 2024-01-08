@@ -6,8 +6,7 @@ API_URL = "https://api-inference.huggingface.co/models/facebook/blenderbot-400M-
 API_TOKEN = "YOUR API TOKEN HERE"
 headers = {"Authorization": f"Bearer {'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'}"}
  
-st.header("🤖Yunwoong's BlenderBot (Demo)")
-st.markdown("[Be Original](https://yunwoong.tistory.com/)")
+st.header("I'm Chat Bot!")
  
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
