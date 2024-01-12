@@ -61,7 +61,7 @@ def main():
 
     if st.button('정보 확인'):
         if skin_problem == '가려움':
-            st.image('./images/가려움.jpeg')
+            st.image('./images/itching.jpeg')
             st.markdown('# 가려움')
             st.write('''소양감(가려움증)이란 피부를 긁거나 문지르고 싶은 충동을 일으키는 불쾌한 감각으로 가장 흔한 피부증상이다.\
                 이는 피부질환 뿐만 아니라 전신 질환이 있는 경우에도 나타날 수 있다. 가려움증은 매우 주관적인 감각으로서 \
@@ -72,7 +72,7 @@ def main():
             st.markdown('### 추천 제품')
 
         elif skin_problem == '아토피':
-            st.image('./images/아토피.jpg')
+            st.image('./images/atopy.jpg')
             st.markdown('# 아토피')
             st.write('''아토피피부염은 주로 유아기 혹은 소아기에 시작되는 만성 재발성의 염증성 피부질환으로 소양증(가려움증)과 피부건조증, 특징적인 습진을 동반한다. \
                 유아기에는 얼굴과 팔다리의 폄 쪽 부분에 습진으로 시작되지만, 소아기가 되면서 특징적으로 팔이 굽혀지는 부분(팔오금)과 \
@@ -84,7 +84,7 @@ def main():
             st.markdown('### 추천 제품')
 
         elif skin_problem == '건선':
-            st.image('./images/건선.jpg')
+            st.image('./images/psoriasis.jpg')
             st.markdown('# 건선')
             st.write('''건선은 붉은 반점과 비늘처럼 일어나는 피부각질(인설)을 동반한 발진(구진)이 주로 압력이나 마찰을 받는 부위 즉 팔다리의 관절 부위, 엉덩이,\
                 두피 등에 흔히 나타나는 질환이다. 손발톱 무좀과 유사한 변형이 손발톱에 나타나기도 하며 관절염이 발생하기도 한다. 수년간 큰 변화를 보이지\
@@ -98,7 +98,7 @@ def main():
             st.markdown('### 추천 제품')
 
         elif skin_problem == '지루성 피부염':
-            st.image('./images/지루성 피부염.jpg')
+            st.image('./images/seborrheic.jpg')
             st.markdown('# 지루성 피부염')
             st.write('''지루성 피부염은 생후 3개월 이내 그리고 40~70세 사이에 발생빈도가 높다. 유아에서는 성별간의 차이가 없으나\
                 성인에서는 남성에게 더 흔하며 지성 피부와 관련이 있다. 홍반 위에 발생한 건성 혹은 기름기가 있는 노란 비늘(인설)이 특징이며 \
@@ -117,7 +117,7 @@ def main():
             st.markdown('### 추천 제품')
 
         elif skin_problem == '습진':
-            st.image('./images/습진.jpg')
+            st.image('./images/eczema.jpg')
             st.markdown('# 습진')
             st.write('''습진은 공통적인 임상적, 조직학적 특징을 보이는 피부 질환군을 통칭하는 용어이다. \
                 피부 증상을 살펴보면 초기에는 주로 가려움과 함께 물집 구진, 홍반, 부기 등이 관찰되며 만성기에는 부기, \
