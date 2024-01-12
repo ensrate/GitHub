@@ -1,9 +1,0 @@
-streamlit
-streamlit-chat
-tensorflow
-streamlit_option_menu
-mysql-connector-python
-pandas
-datetime
-csv
-pymysql
