@@ -1,0 +1,6 @@
+streamlit==1.8.0
+streamlit-chat
+streamlit_option_menu
+mysql-connector-python
+pandas
+pymysql
