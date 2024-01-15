@@ -9,7 +9,7 @@ import pymysql
 
 date = datetime.today().strftime("%Y/%m/%d")
 
-st.set_page_config(page_title="피부별 제품추천 서비스") #, layout="wide")
+st.set_page_config(page_title="피부상태별 제품추천 서비스") #, layout="wide")
 
 # 데이터베이스 연결 설정
 def connect_db():
@@ -55,7 +55,7 @@ def main():
         """, unsafe_allow_html=True)
 
     # 페이지 제목 추가
-    st.markdown('<h1 class="title">피부별 제품추천 서비스</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="title">피부상태별 제품추천 서비스</h1>', unsafe_allow_html=True)
     # st.title("피부 상태 기반 추천 서비스")
     skin_problem_options = ['가려움', '아토피', '건선', '지루성 피부염', '습진']
     skin_problem = st.selectbox('피부 문제를 선택하세요:', skin_problem_options, index=0)
