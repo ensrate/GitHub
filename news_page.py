@@ -12,7 +12,7 @@ date = datetime.today().strftime("%Y년 %m월")
 # 데이터베이스 연결 설정
 def connect_db():
     return mysql.connector.connect(
-        host="/0.tcp.jp.ngrok.io",
+        host="0.tcp.jp.ngrok.io",
         port=17632,
         user="root",
         passwd="1111",
