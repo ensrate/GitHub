@@ -14,7 +14,7 @@ st.set_page_config(page_title="피부 관리 추천 서비스") #, layout="wide"
 # 데이터베이스 연결 설정
 def connect_db():
     return mysql.connector.connect(
-        host="localhost",
+        host="0.tcp.jp.ngrok.io",
         user="root",
         passwd="1111",
         db="coupangDB"
