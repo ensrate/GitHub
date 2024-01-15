@@ -173,7 +173,7 @@ def main():
         
         # st.markdown(f'#### {skin_problem} 관련 제품 판매량순 TOP {len(df)}')
         st.write('')
-        space = '&nbsp;' * 148
+        space = '&nbsp;' * 140
         st.write(f'{space} 출처 : coupang  &nbsp;  ({date}기준)')
         df['구매링크'] = df.apply(lambda row: f"<a href='{row['구매링크']}' target='_blank'>Click!</a>", axis=1)
         st.write(df.to_html(escape=False), unsafe_allow_html=True)
