@@ -15,7 +15,7 @@ st.set_page_config(page_title="피부상태별 제품추천 서비스") #, layou
 def connect_db():
     return mysql.connector.connect(
         host="0.tcp.jp.ngrok.io",
-        port=17632,
+        port=18721,
         user="root",
         passwd="1111",
         db="coupangDB"
