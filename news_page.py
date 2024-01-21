@@ -57,8 +57,8 @@ def main():
     # 페이지 제목 추가
     st.markdown('<h1 class="title">피부 관련 최신 뉴스기사</h1>', unsafe_allow_html=True)
 
+    # DB에서 df 가져오기
     df = get_data()
-
     df.index = range(1, len(df) + 1)
     df.rename(columns={'news_title': '기사제목', 'link': '기사링크'}, inplace=True)
     df_len = len(df)
@@ -66,7 +66,9 @@ def main():
     space = '&nbsp;' * 183
     st.write(f'{space}({date}자)')
     df['기사링크'] = df.apply(lambda row: f"<a href='{row['기사링크']}' target='_blank'>Click!</a>", axis=1)
-    st.write(df.to_html(escape=False), unsafe_allow_html=True)
+    st.write(df.to_html(escape=False), unsafe_allow_html=True)  # 데이터프레임을 streamlit에 게시
+    # escape=False: HTML을 변환할 때, 특수 문자(예: <, >, &)를 HTML 엔티티로 변환하지 않도록 함
+    # unsafe_allow_html=True : HTML 코드가 웹 페이지에서 실제 HTML로 해석되고 렌더링되도록 함
             
-if __name__ == "__main__":
+if __name__ == "__main__":  # 특정 코드 블록이 직접 실행될 때만 실행되도록 하는 코드
     main()
