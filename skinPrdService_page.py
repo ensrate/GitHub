@@ -144,6 +144,7 @@ def main():
         df.index = range(1, len(df) + 1)
         df['rate'] = df['rate'].round(1)
         df.rename(columns={'id': '번호', 'product': '상품명', 'price': '가격', 'rate': '평점', 'url': '구매링크'}, inplace=True)
+        df = df.drop('번호', axis=1)
         df_len = len(df)
 
         html_code = f"""
