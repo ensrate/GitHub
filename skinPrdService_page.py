@@ -30,7 +30,7 @@ def get_data(table_name):
     result = cursor.fetchall()
     cursor.close()
     conn.close()
-    return pd.DataFrame(result, columns=['product', 'price', 'rate', 'url'])
+    return pd.DataFrame(result, columns=['id', 'product', 'price', 'rate', 'url'])
 
 # 메인 함수
 def main():
@@ -143,7 +143,7 @@ def main():
 
         df.index = range(1, len(df) + 1)
         df['rate'] = df['rate'].round(1)
-        df.rename(columns={'product': '상품명', 'price': '가격', 'rate': '평점', 'url': '구매링크'}, inplace=True)
+        df.rename(columns={'id': '번호', 'product': '상품명', 'price': '가격', 'rate': '평점', 'url': '구매링크'}, inplace=True)
         df_len = len(df)
 
         html_code = f"""
