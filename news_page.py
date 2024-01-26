@@ -13,7 +13,7 @@ date = datetime.today().strftime("%Y년 %m월")
 def connect_db():
     return mysql.connector.connect(
         host="0.tcp.jp.ngrok.io",
-        port=18721,
+        port=16801,
         user="root",
         passwd="1111",
         db="newsDB"
