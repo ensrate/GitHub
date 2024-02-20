@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 분류 웹서비스</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='model.css') }}">
+</head>
+<body>
+    <div class="container">
+        <label for="fileInput" id="fileLabel">이미지 업로드</label>
+        <input type="file" id="fileInput">
+        <div id="uploadMessage" style="display: none;">이미지 업로드가 완료되었습니다 <br>예측 버튼을 눌러 결과를 확인해보세요 </div>
+        <button onclick="predict()" id="predictButton">예측</button>
+        <div id="fileName"></div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function predict() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            
+            // 이미지 파일을 form 데이터로 변환
+            const formData = new FormData();
+            formData.append('file', file);
+            
+            // 백엔드 API 호출
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData
+            });
+
+            // 예측 결과 받아오기
+            const result = await response.json();
+            if ('prediction' in result) {
+                document.getElementById('result').innerText = `예측 결과: ${result.prediction}`;
+            } else {
+                document.getElementById('result').innerText = '예측 결과를 가져오지 못했습니다.';
+            }
+        }
+
+        // 이미지 업로드 완료 메시지 표시 및 파일명 표시
+        document.getElementById('fileInput').addEventListener('change', function() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            
+            document.getElementById('uploadMessage').style.display = 'block';
+            // 파일명 표시
+            document.getElementById('fileName').innerText = `업로드 파일명 : ${file.name}`;
+        });
+    </script>
+</body>
+</html>
