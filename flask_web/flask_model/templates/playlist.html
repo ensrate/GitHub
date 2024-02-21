@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='playlist/default.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='playlist/playlist.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='playlist/ProjectView.css') }}">
+    <!-- JavaScript 파일 연결 -->
+    <script type="module" src="{{ url_for('static', filename='playlist/playlist.js') }}"></script>
+	<script src="{{ url_for('static', filename='playlist/scrollControl.js') }}"></script>
+</head>
+<body class="before-load">
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+    <article class="page">
+        <header class="header">
+            <div class="header-inner width-setter">
+                <h2 class="site-title">
+                    <div class="site-title-inner">
+                        유비온 미디어 조
+                    </div>
+                </h2>
+                <div class="header-content observer-ready">
+                    <div class="paragraph">
+                        <a href="#">Lorem</a> ipsum dolor sit, amet consectetur adipisicing elit. Rerum earum, eius deleniti doloribus perspiciatis doloremque nesciunt eos beatae eaque nemo! Placeat quas eius animi dignissimos sapiente voluptate veniam vitae quae suscipit vero voluptatibus magnam in aliquid molestiae non ducimus saepe nostrum dicta vel consequuntur iure, molestias labore. Accusantium provident eligendi vitae alias explicabo, optio nulla illum minima nihil laborum labore quasi molestias obcaecati deserunt esse velit fuga iste asperiores qui fugit officiis culpa delectus rerum. Aspernatur quas similique veniam blanditiis doloremque deserunt qui doloribus voluptates asperiores, consequatur magni omnis sit reiciendis nesciunt dolores quisquam id quos suscipit. Eos distinctio facilis officia dolore vitae eum quis, numquam magni odio ratione in delectus architecto exercitationem est doloremque inventore porro reiciendis commodi corrupti sit nam. Eveniet, commodi praesentium? Illum, doloribus repudiandae eos odio quos officiis voluptates laborum adipisci nihil non! Animi nihil explicabo quisquam ipsum, aliquid temporibus non dignissimos, veniam, officiis repellendus autem repudiandae dicta eligendi iste illum? Consectetur nam enim corrupti dolore nisi incidunt. Quae, a saepe! Ducimus obcaecati ratione voluptatum placeat nesciunt animi? Facere quasi accusamus, sit at repellat consequatur minus.
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-observer-start observer-ready"></div>
+
+        <section class="scroll-content">
+            <ul class="project-list width-setter">
+                <li id="emotion1" class="project-item observer-ready" data-project-index="0">
+                    <div class="project-content">
+                        <p class="project-title">
+                            <span class="project-num">01</span>
+                            <span class="project-name">서비스 소개</span>
+                        </p>
+                        <p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo dolore consequuntur eaque ipsa, porro totam adipisci in.</p>
+                        <button class="project-btn" data-project-index="0">Go</button>
+                    </div>
+				</li>
+				<li id="emotion2" class="project-item observer-ready" data-project-index="1">
+					<div class="project-content">
+						<p class="project-title">
+							<span class="project-num">02</span>
+							<span class="project-name">Lorem ipsum</span>
+						</p>
+						<p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo dolore consequuntur eaque ipsa, porro totam adipisci in.</p>
+						<button class="project-btn" data-project-index="1">Go</button>
+					</div>
+				</li>
+				<li id="emotion3" class="project-item observer-ready" data-project-index="2">
+					<div class="project-content">
+						<p class="project-title">
+							<span class="project-num">03</span>
+							<span class="project-name">Lorem ipsum</span>
+						</p>
+						<p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo dolore consequuntur eaque ipsa, porro totam adipisci in.</p>
+						<button class="project-btn" data-project-index="2">Go</button>
+					</div>
+				</li>
+				<li id="emotion4" class="project-item observer-ready" data-project-index="3">
+					<div class="project-content">
+						<p class="project-title">
+							<span class="project-num">04</span>
+							<span class="project-name">Lorem ipsum</span>
+						</p>
+						<p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo dolore consequuntur eaque ipsa, porro totam adipisci in.</p>
+						<button class="project-btn" data-project-index="3">Go</button>
+					</div>
+				</li>
+				<li id="emotion5" class="project-item observer-ready" data-project-index="4"> 
+					<div class="project-content">
+						<p class="project-title">
+							<span class="project-num">05</span>
+							<span class="project-name">Lorem ipsum</span>
+						</p>
+						<p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo dolore consequuntur eaque ipsa, porro totam adipisci in.</p>
+						<button class="project-btn" data-project-index="4">Go</button>
+					</div>
+				</li>
+				<li id="emotion6" class="project-item observer-ready" data-project-index="5">
+					<div class="project-content">
+						<p class="project-title">
+							<span class="project-num">06</span>
+							<span class="project-name">Lorem ipsum</span>
+						</p>
+						<p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo dolore consequuntur eaque ipsa, porro totam adipisci in.</p>
+						<button class="project-btn" data-project-index="5">Go</button>
+					</div>
+				</li>
+			</ul>
+		</section>
+
+		<div class="content-observer-end observer-ready"></div>
+
+		<section class="panels">
+			<div class="panel-list">
+				<div class="panel-item">
+				</div>
+				<div class="panel-item">
+				</div>
+				<div class="panel-item">
+				</div>
+				<div class="panel-item">
+				</div>
+				<div class="panel-item">
+				</div>
+				<div class="panel-item">
+				</div>
+			</div>
+		</section>
+
+		<section class="normal-content">
+			<div class="width-setter">
+			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur dignissimos ex inventore laborum dicta ut ullam deleniti mollitia odio sint. Eum provident vel corporis cum, nemo porro? Repellat quam nemo enim repellendus a, quae mollitia accusantium iure, perspiciatis quas fugiat architecto. Quia voluptate sequi vel ex corporis quidem optio voluptas dolorum, iure, inventore pariatur, odio qui doloremque sint voluptatibus eius blanditiis recusandae tenetur asperiores laboriosam iste animi adipisci nam commodi! Ipsa, doloremque fugiat! Quis omnis impedit quod illum nobis soluta nesciunt dolorum ducimus ut eligendi recusandae eos fuga repellat porro similique, magnam libero odio laboriosam molestiae nihil qui! Repellat nam harum rem dolores necessitatibus? Veniam quaerat dolor vitae quas non natus laboriosam deleniti assumenda nam excepturi hic voluptatum officia doloremque neque repellendus iste magni eius reiciendis impedit molestias ipsa harum, esse porro. Excepturi id libero maxime fugiat, a corporis perspiciatis ut suscipit eligendi soluta et sunt. Delectus quo pariatur aliquam beatae animi eius rem, illum expedita eveniet dolor provident nisi. Amet maiores sequi ipsum fugiat officiis quis pariatur itaque, culpa quam quisquam aperiam vitae. Aperiam vero animi nesciunt maxime quibusdam alias, repudiandae tempora temporibus. Natus, error? Temporibus officiis quod ipsa! Dicta facere aperiam magni illo cupiditate? Vero corrupti nam perferendis?<br><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur dignissimos ex inventore laborum dicta ut ullam deleniti mollitia odio sint. Eum provident vel corporis cum, nemo porro? Repellat quam nemo enim repellendus a, quae mollitia accusantium iure, perspiciatis quas fugiat architecto. Quia voluptate sequi vel ex corporis quidem optio voluptas dolorum, iure, inventore pariatur, odio qui doloremque sint voluptatibus eius blanditiis recusandae tenetur asperiores laboriosam iste animi adipisci nam commodi! Ipsa, doloremque fugiat! Quis omnis impedit quod illum nobis soluta nesciunt dolorum ducimus ut eligendi recusandae eos fuga repellat porro similique, magnam libero odio laboriosam molestiae nihil qui! Repellat nam harum rem dolores necessitatibus? Veniam quaerat dolor vitae quas non natus laboriosam deleniti assumenda nam excepturi hic voluptatum officia doloremque neque repellendus iste magni eius reiciendis impedit molestias ipsa harum, esse porro. Excepturi.
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="width-setter">
+				<p class="copyright">Copyright &copy; 2024</p>
+			</div>
+		</footer>
+	</article>
+
+	<!-- Project View -->
+	<!-- <div class="cover-panel">
+		<section class="project-view">
+			<button class="back-btn"><span></span></button>
+			<header class="project-view-header">
+				<div class="width-setter">
+					<h1 class="project-view-title">Placeholder</h1>
+				</div>
+			</header>
+			<div class="project-view-content width-setter">
+				<figure class="a11y-hidden-bg project-view-image" style="background-image: url('./assets/images/house_tr.png');">
+					<img class="a11y-hidden" src="./assets/images/house_tr.png" alt="${this.title}">
+				</figure>
+				<div class="project-view-desc width-setter">
+					Placeholder
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

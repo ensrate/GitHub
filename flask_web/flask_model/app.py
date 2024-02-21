@@ -5,7 +5,6 @@ import tensorflow as tf
 
 app = Flask(__name__)
 
-# 모델 로드
 model = tf.keras.models.load_model('./model/mnist_model.h5')
 
 # 이미지 전처리 함수 (흑백 변환)
@@ -23,9 +22,27 @@ def preprocess_image(image):
 # index 페이지 렌더링
 @app.route('/')
 def index():
-    return render_template('model.html')
+    # index.html을 렌더링할 때 필요한 CSS 및 JavaScript 파일을 함께 전달
+    return render_template('index.html', css_files=[
+        'main.css',
+    ])
+
+# 모델 서비스 페이지 렌더링
+@app.route('/playlist')
+def playlist():
+    return render_template('playlist.html', css_files=[
+        'default.css',
+        'playlist.css',
+        'ProjectView.css'
+    ], js_files=[
+        'playlist.js',
+        'ProjectView.js',
+        'data.js',
+    ])
 
 # 예측 엔드포인트
+# Flask 애플리케이션에서 /predict 엔드포인트에 대한 POST 요청을 처리하는 부분
+# 데코레이터를 사용하여 특정 URL 경로(/predict)와 HTTP 메서드(POST)에 대한 요청을 처리
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
@@ -40,6 +57,7 @@ def predict():
         # 예측 결과를 소프트맥스 확률에서 가장 높은 확률을 가진 클래스로 변환
         predicted_class = np.argmax(prediction)
         # 예측 결과 반환
+        # 만약 상태 코드를 명시하지 않는다면, 기본적으로 200이 반환되지만, 명시적으로 상태 코드를 지정하는 것이 코드의 가독성과 명확성을 높일 
         return jsonify({'prediction': int(predicted_class)}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500  # 서버 오류 응답

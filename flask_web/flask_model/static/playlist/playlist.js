@@ -177,5 +177,5 @@ window.addEventListener('load', () => {
 			projectView.show(data[ e.target.dataset.projectIndex ]);
 		}
 	});
-
+	
 });

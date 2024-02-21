@@ -1,155 +1,58 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>유비온 미디어 조 서비스페이지</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Diphylleia&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="{{ url_for('static', filename='default.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='ProjectView.css') }}">
-		<script type="module" src="{{ url_for('static', filename='main.js') }}"></script>
-	</head>
-<body class="before-load">
-	<div class="loader-wrapper">
-		<div class="loader"></div>
-	</div>
-	<article class="page">
-		<header class="header">
-			<div class="header-inner width-setter">
-				<h2 class="site-title">
-					<div class="site-title-inner">
-						유비온 미디어 조
-					</div>
-				</h2>
-				<div class="header-content observer-ready">
-					<div class="paragraph">
-						<a href="#">Lorem</a> ipsum dolor sit, amet consectetur adipisicing elit. Rerum earum, eius deleniti doloribus perspiciatis doloremque nesciunt eos beatae eaque nemo! Placeat quas eius animi dignissimos sapiente voluptate veniam vitae quae suscipit vero voluptatibus magnam in aliquid molestiae non ducimus saepe nostrum dicta vel consequuntur iure, molestias labore. Accusantium provident eligendi vitae alias explicabo, optio nulla illum minima nihil laborum labore quasi molestias obcaecati deserunt esse velit fuga iste asperiores qui fugit officiis culpa delectus rerum. Aspernatur quas similique veniam blanditiis doloremque deserunt qui doloribus voluptates asperiores, consequatur magni omnis sit reiciendis nesciunt dolores quisquam id quos suscipit. Eos distinctio facilis officia dolore vitae eum quis, numquam magni odio ratione in delectus architecto exercitationem est doloremque inventore porro reiciendis commodi corrupti sit nam. Eveniet, commodi praesentium? Illum, doloribus repudiandae eos odio quos officiis voluptates laborum adipisci nihil non! Animi nihil explicabo quisquam ipsum, aliquid temporibus non dignissimos, veniam, officiis repellendus autem repudiandae dicta eligendi iste illum? Consectetur nam enim corrupti dolore nisi incidunt. Quae, a saepe! Ducimus obcaecati ratione voluptatum placeat nesciunt animi? Facere quasi accusamus, sit at repellat consequatur minus.
-					</div>
-				</div>
-			</div>
-		</header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 분류 웹서비스</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index/main.css') }}">
 
-		<div class="content-observer-start observer-ready"></div>
+</head>
+<body>
+    <div class="container">
+        <label for="fileInput" id="fileLabel">이미지 업로드</label>
+        <input type="file" id="fileInput">
+        <div id="uploadMessage" style="display: none;">이미지 업로드가 완료되었습니다 <br>예측 버튼을 눌러 결과를 확인해보세요 </div>
+        <a href='/playlist' onclick="predict()" id="predictButton">예측</a>
+        <div id="fileName"></div>
+        <div id="result"></div>
+    </div>
 
-		<section class="scroll-content">
-			<ul class="project-list width-setter">
-				<li class="project-item observer-ready" data-project-index="0">
-					<div class="project-content">
-						<p class="project-title">
-							<span class="project-num">01</span>
-							<span class="project-name">Lorem ipsum</span>
-						</p>
-						<p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo dolore consequuntur eaque ipsa, porro totam adipisci in.</p>
-						<button class="project-btn" data-project-index="0">Go</button>
-					</div>
-				</li>
-				<li class="project-item observer-ready" data-project-index="1">
-					<div class="project-content">
-						<p class="project-title">
-							<span class="project-num">02</span>
-							<span class="project-name">Lorem ipsum</span>
-						</p>
-						<p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo dolore consequuntur eaque ipsa, porro totam adipisci in.</p>
-						<button class="project-btn" data-project-index="1">Go</button>
-					</div>
-				</li>
-				<li class="project-item observer-ready" data-project-index="2">
-					<div class="project-content">
-						<p class="project-title">
-							<span class="project-num">03</span>
-							<span class="project-name">Lorem ipsum</span>
-						</p>
-						<p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo dolore consequuntur eaque ipsa, porro totam adipisci in.</p>
-						<button class="project-btn" data-project-index="2">Go</button>
-					</div>
-				</li>
-				<li class="project-item observer-ready" data-project-index="3">
-					<div class="project-content">
-						<p class="project-title">
-							<span class="project-num">04</span>
-							<span class="project-name">Lorem ipsum</span>
-						</p>
-						<p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo dolore consequuntur eaque ipsa, porro totam adipisci in.</p>
-						<button class="project-btn" data-project-index="3">Go</button>
-					</div>
-				</li>
-				<li class="project-item observer-ready" data-project-index="4"> 
-					<div class="project-content">
-						<p class="project-title">
-							<span class="project-num">05</span>
-							<span class="project-name">Lorem ipsum</span>
-						</p>
-						<p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo dolore consequuntur eaque ipsa, porro totam adipisci in.</p>
-						<button class="project-btn" data-project-index="4">Go</button>
-					</div>
-				</li>
-				<li class="project-item observer-ready" data-project-index="5">
-					<div class="project-content">
-						<p class="project-title">
-							<span class="project-num">06</span>
-							<span class="project-name">Lorem ipsum</span>
-						</p>
-						<p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo dolore consequuntur eaque ipsa, porro totam adipisci in.</p>
-						<button class="project-btn" data-project-index="5">Go</button>
-					</div>
-				</li>
-			</ul>
-		</section>
+    <script>
+        async function predict() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            
+            // 이미지 파일을 form 데이터로 변환
+            const formData = new FormData();
+            formData.append('file', file);
+            
+            // 백엔드 API 호출
+            // 다른 클라이언트가 웹 서버에 특정한 동작을 수행하도록 요청 (POST 요청)
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData
+            });
 
-		<div class="content-observer-end observer-ready"></div>
+            // 예측 결과 받아오기
+            const result = await response.json(); //서버로부터 받은 응답의 내용을 JSON 형식으로 변환하는 메서드, await :해당 함수가 완료될 때까지 기다리기
+            if ('prediction' in result) {
+                document.getElementById('result').innerText = `예측 결과: ${result.prediction}`;
+                // JSON 응답 객체인 result는 백엔드에서 받은 데이터를 나타내며, 이 객체 안에는 'prediction'이라는 키와 해당하는 값이 포함. 
+                // 따라서 result.prediction은 JSON 응답 객체의 'prediction' 키에 해당하는 값을 참조하는 것.
+            } else {
+                document.getElementById('result').innerText = '예측 결과를 가져오지 못했습니다.';
+            }
+        }
 
-		<section class="panels">
-			<div class="panel-list">
-				<div class="panel-item">
-				</div>
-				<div class="panel-item">
-				</div>
-				<div class="panel-item">
-				</div>
-				<div class="panel-item">
-				</div>
-				<div class="panel-item">
-				</div>
-				<div class="panel-item">
-				</div>
-			</div>
-		</section>
-
-		<section class="normal-content">
-			<div class="width-setter">
-			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur dignissimos ex inventore laborum dicta ut ullam deleniti mollitia odio sint. Eum provident vel corporis cum, nemo porro? Repellat quam nemo enim repellendus a, quae mollitia accusantium iure, perspiciatis quas fugiat architecto. Quia voluptate sequi vel ex corporis quidem optio voluptas dolorum, iure, inventore pariatur, odio qui doloremque sint voluptatibus eius blanditiis recusandae tenetur asperiores laboriosam iste animi adipisci nam commodi! Ipsa, doloremque fugiat! Quis omnis impedit quod illum nobis soluta nesciunt dolorum ducimus ut eligendi recusandae eos fuga repellat porro similique, magnam libero odio laboriosam molestiae nihil qui! Repellat nam harum rem dolores necessitatibus? Veniam quaerat dolor vitae quas non natus laboriosam deleniti assumenda nam excepturi hic voluptatum officia doloremque neque repellendus iste magni eius reiciendis impedit molestias ipsa harum, esse porro. Excepturi id libero maxime fugiat, a corporis perspiciatis ut suscipit eligendi soluta et sunt. Delectus quo pariatur aliquam beatae animi eius rem, illum expedita eveniet dolor provident nisi. Amet maiores sequi ipsum fugiat officiis quis pariatur itaque, culpa quam quisquam aperiam vitae. Aperiam vero animi nesciunt maxime quibusdam alias, repudiandae tempora temporibus. Natus, error? Temporibus officiis quod ipsa! Dicta facere aperiam magni illo cupiditate? Vero corrupti nam perferendis?<br><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur dignissimos ex inventore laborum dicta ut ullam deleniti mollitia odio sint. Eum provident vel corporis cum, nemo porro? Repellat quam nemo enim repellendus a, quae mollitia accusantium iure, perspiciatis quas fugiat architecto. Quia voluptate sequi vel ex corporis quidem optio voluptas dolorum, iure, inventore pariatur, odio qui doloremque sint voluptatibus eius blanditiis recusandae tenetur asperiores laboriosam iste animi adipisci nam commodi! Ipsa, doloremque fugiat! Quis omnis impedit quod illum nobis soluta nesciunt dolorum ducimus ut eligendi recusandae eos fuga repellat porro similique, magnam libero odio laboriosam molestiae nihil qui! Repellat nam harum rem dolores necessitatibus? Veniam quaerat dolor vitae quas non natus laboriosam deleniti assumenda nam excepturi hic voluptatum officia doloremque neque repellendus iste magni eius reiciendis impedit molestias ipsa harum, esse porro. Excepturi.
-			</div>
-		</section>
-
-		<footer class="footer">
-			<div class="width-setter">
-				<p class="copyright">Copyright &copy; 2024</p>
-			</div>
-		</footer>
-	</article>
-
-	<!-- Project View -->
-	<!-- <div class="cover-panel">
-		<section class="project-view">
-			<button class="back-btn"><span></span></button>
-			<header class="project-view-header">
-				<div class="width-setter">
-					<h1 class="project-view-title">Placeholder</h1>
-				</div>
-			</header>
-			<div class="project-view-content width-setter">
-				<figure class="a11y-hidden-bg project-view-image" style="background-image: url('./assets/images/house_tr.png');">
-					<img class="a11y-hidden" src="./assets/images/house_tr.png" alt="${this.title}">
-				</figure>
-				<div class="project-view-desc width-setter">
-					Placeholder
-				</div>
-			</div>
-		</section>
-	</div>
+        // 이미지 업로드 완료 메시지 표시 및 파일명 표시
+        document.getElementById('fileInput').addEventListener('change', function() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            
+            document.getElementById('uploadMessage').style.display = 'block';
+            // 파일명 표시
+            document.getElementById('fileName').innerText = `업로드 파일명 : ${file.name}`;
+        });
+    </script>
 </body>
 </html>
