@@ -48,12 +48,12 @@ button {
 	overflow: hidden;
 }
 .width-setter {
-	padding: 0 20px;  /* 일괄적으로 여백을 맞춰주기 위해 태그에 붙여준 클래스 */
+	padding: 160px 20px;  /* 일괄적으로 여백을 맞춰주기 위해 태그에 붙여준 클래스 */
 }
 .header {
 	position: relative;
 	z-index: 10;
-	margin-bottom: 70vh;  /* 소개문단과 본문 사이의 위아래 공간 설정 */
+	margin-bottom: 100vh;  /* 소개문단과 본문 사이의 위아래 공간 설정 */
 }
 .site-title {
 	font-size: 9.4vw;  /* 사이트 제목의 폰트를 페이지의 크기에 맞춰 자동으로 조정되도록 하는 단위 vw 사용 */
@@ -69,6 +69,8 @@ button {
 .scroll-content {
 	position: relative;
 	z-index: 10;
+	padding: 0 640px;
+	text-align: center;
 }
 
 /* 3d panels */
@@ -97,7 +99,7 @@ button {
 	width: 400px;
 	height: 400px;
 	margin: -150px 0 0 -150px; /* left, top을 50vw/vh로 정렬했지만 content의 왼쪽상단 모서리를 기준으로 정렬됐기 때문에 50%(=150/300)를 상,좌 쪽으로 땡긴 것 */
-	opacity: 0.3;  /* 비활성 패널은 흐리게 보이도록 */          /* translate로 할 수도 있지만, transform도 있어서 그냥 margin으로 처리하는 전략 */
+	opacity: 1;  /* 비활성 패널은 흐리게 보이도록 */          /* translate로 할 수도 있지만, transform도 있어서 그냥 margin으로 처리하는 전략 */
 	transform-style: preserve-3d;  /* 당장은 필요없지만 이미지에 transform을 줄 경우 이게 상위 요소이므로 그냥 설정한 것*/
 	transition: 0.5s;  /* transition으로 패널이 이동하는 시간이 0.5초 */
 }

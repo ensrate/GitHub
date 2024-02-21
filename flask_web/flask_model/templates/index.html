@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이미지 분류 웹서비스</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='index/main.css') }}">
-
 </head>
 <body>
     <div class="container">
         <label for="fileInput" id="fileLabel">이미지 업로드</label>
         <input type="file" id="fileInput">
-        <div id="uploadMessage" style="display: none;">이미지 업로드가 완료되었습니다 <br>예측 버튼을 눌러 결과를 확인해보세요 </div>
-        <a href='/playlist' onclick="predict()" id="predictButton">예측</a>
+        <div id="uploadMessage" style="display: none;">이미지 업로드가 완료되었습니다 <br>결과보기 버튼을 눌러 결과를 확인해보세요 </div>
+        <br>
+        <button onclick="predict()" id="predictButton" style="display: none;">결과보기</button>
+        <br>
         <div id="fileName"></div>
-        <div id="result"></div>
+        <br><br>
+        <div id="result-container" style="display: none;">
+            <div id="result"></div>
+        </div>
+        <br>
+        <a href='/playlist' id="predictLink" style="display: none;" target="_blank">자세히 보러가기</a> <!-- 처음에는 숨김 -->
     </div>
 
     <script>
@@ -27,18 +33,18 @@
             formData.append('file', file);
             
             // 백엔드 API 호출
-            // 다른 클라이언트가 웹 서버에 특정한 동작을 수행하도록 요청 (POST 요청)
             const response = await fetch('/predict', {
                 method: 'POST',
                 body: formData
             });
 
             // 예측 결과 받아오기
-            const result = await response.json(); //서버로부터 받은 응답의 내용을 JSON 형식으로 변환하는 메서드, await :해당 함수가 완료될 때까지 기다리기
+            const result = await response.json();
             if ('prediction' in result) {
-                document.getElementById('result').innerText = `예측 결과: ${result.prediction}`;
-                // JSON 응답 객체인 result는 백엔드에서 받은 데이터를 나타내며, 이 객체 안에는 'prediction'이라는 키와 해당하는 값이 포함. 
-                // 따라서 result.prediction은 JSON 응답 객체의 'prediction' 키에 해당하는 값을 참조하는 것.
+                document.getElementById('result').innerText = `모델이 예측한 숫자: ${result.prediction}`;
+                // 결과를 표시한 후에 링크 표시
+                document.getElementById('predictLink').style.display = 'block';
+                document.getElementById('result-container').style.display = 'block';
             } else {
                 document.getElementById('result').innerText = '예측 결과를 가져오지 못했습니다.';
             }
@@ -50,8 +56,8 @@
             const file = fileInput.files[0];
             
             document.getElementById('uploadMessage').style.display = 'block';
-            // 파일명 표시
-            document.getElementById('fileName').innerText = `업로드 파일명 : ${file.name}`;
+            document.getElementById('predictButton').style.display = 'block';
+            document.getElementById('fileName').innerText = `업로드한 파일명 : ${file.name}`;
         });
     </script>
 </body>

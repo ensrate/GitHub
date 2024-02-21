@@ -2,7 +2,7 @@
 import { data } from './data.js';
 import { ProjectView } from './ProjectView.js';
 
-let numberOfPanels = 6; // 패널 개수
+let numberOfPanels = 7; // 패널 개수
 let panelSize = 400; // 패널 크기(폭)
 let unitRadian = 2 * Math.PI / numberOfPanels;  // radian 표기법 (호도법)  1pi = 180˚, 2pi = 360˚
 let unitDegree = 360 / numberOfPanels;  // degree 표기법 (각도법)

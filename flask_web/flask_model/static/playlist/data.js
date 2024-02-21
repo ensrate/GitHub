@@ -1,38 +1,44 @@
 export const data = [
 	{
-		title: `Lorem ipsum`,
-		image: '/static/images/Deep_Learning.png',
-		color: '#f98866',
+		title: `기쁨`,
+		image: '',
+		color: '#F7D358',
 		description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, officiis alias amet ab asperiores, tempora id nihil nam molestiae fugiat magnam commodi. Laboriosam sequi facilis tenetur temporibus deleniti enim ipsum, amet ipsa accusantium eum numquam iste laudantium maxime. Rerum facere eius blanditiis perspiciatis officia voluptates provident. Est velit aliquam vero iusto vel atque, ratione, reiciendis assumenda asperiores harum blanditiis inventore quidem nam non sint natus ipsam voluptate tenetur!`
 	},
 	{
-		title: `Lorem ipsum`,
+		title: `슬픔`,
 		image: '',
-		color: '#ffbb00',
+		color: '#0000FF',
 		description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, officiis alias amet ab asperiores, tempora id nihil nam molestiae fugiat magnam commodi. Laboriosam sequi facilis tenetur temporibus deleniti enim ipsum, amet ipsa accusantium eum numquam iste laudantium maxime. Rerum facere eius blanditiis perspiciatis officia voluptates provident. Est velit aliquam vero iusto vel atque, ratione, reiciendis assumenda asperiores harum blanditiis inventore quidem nam non sint natus ipsam voluptate tenetur!`
 	},
 	{
-		title: `Lorem ipsum`,
+		title: `설렘`,
 		image: '',
-		color: '#01FF70',
+		color: '#F5A9E1',
 		description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, officiis alias amet ab asperiores, tempora id nihil nam molestiae fugiat magnam commodi. Laboriosam sequi facilis tenetur temporibus deleniti enim ipsum, amet ipsa accusantium eum numquam iste laudantium maxime. Rerum facere eius blanditiis perspiciatis officia voluptates provident. Est velit aliquam vero iusto vel atque, ratione, reiciendis assumenda asperiores harum blanditiis inventore quidem nam non sint natus ipsam voluptate tenetur!`
 	},
 	{
-		title: `Lorem ipsum`,
+		title: `분노`,
 		image: '',
-		color: '#80bd9e',
+		color: '#FF0000',
 		description: `Tina's Portfolio ipsum dolor sit amet consectetur adipisicing elit. Ratione, officiis alias amet ab asperiores, tempora id nihil nam molestiae fugiat magnam commodi. Laboriosam sequi facilis tenetur temporibus deleniti enim ipsum, amet ipsa accusantium eum numquam iste laudantium maxime. Rerum facere eius blanditiis perspiciatis officia voluptates provident. Est velit aliquam vero iusto vel atque, ratione, reiciendis assumenda asperiores harum blanditiis inventore quidem nam non sint natus ipsam voluptate tenetur!`
 	},
 	{
-		title: 'Lorem ipsum',
+		title: '평온',
 		image: '',
-		color: '#375e97',
+		color: '#01DF01',
 		description: `Butter ipsum dolor sit amet consectetur adipisicing elit. Ratione, officiis alias amet ab asperiores, tempora id nihil nam molestiae fugiat magnam commodi. Laboriosam sequi facilis tenetur temporibus deleniti enim ipsum, amet ipsa accusantium eum numquam iste laudantium maxime. Rerum facere eius blanditiis perspiciatis officia voluptates provident. Est velit aliquam vero iusto vel atque, ratione, reiciendis assumenda asperiores harum blanditiis inventore quidem nam non sint natus ipsam voluptate tenetur!`
 	},
 	{
-		title: 'Lorem ipsum',
+		title: '불안',
 		image: '',
-		color: '#AAAAAA',
+		color: '#848484',
+		description: `Colo Company ipsum dolor sit amet consectetur adipisicing elit. Ratione, officiis alias amet ab asperiores, tempora id nihil nam molestiae fugiat magnam commodi. Laboriosam sequi facilis tenetur temporibus deleniti enim ipsum, amet ipsa accusantium eum numquam iste laudantium maxime. Rerum facere eius blanditiis perspiciatis officia voluptates provident. Est velit aliquam vero iusto vel atque, ratione, reiciendis assumenda asperiores harum blanditiis inventore quidem nam non sint natus ipsam voluptate tenetur!`
+	},
+	{
+		title: 'Lorem ipsum',
+		image: '중립',
+		color: '#000000',
 		description: `Colo Company ipsum dolor sit amet consectetur adipisicing elit. Ratione, officiis alias amet ab asperiores, tempora id nihil nam molestiae fugiat magnam commodi. Laboriosam sequi facilis tenetur temporibus deleniti enim ipsum, amet ipsa accusantium eum numquam iste laudantium maxime. Rerum facere eius blanditiis perspiciatis officia voluptates provident. Est velit aliquam vero iusto vel atque, ratione, reiciendis assumenda asperiores harum blanditiis inventore quidem nam non sint natus ipsam voluptate tenetur!`
 	},
 ];
